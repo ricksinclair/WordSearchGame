@@ -9,12 +9,71 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
 </head>
+<style>
+    .letter {
+        width: 30px;
+        height: 30px;
+        border-style: solid;
+        padding: 2px;
+        float: left;
+        margin: 2px;
+    }
+
+    .letter-button-color {
+        color: darkcyan;
+    }
+
+    #buttons {
+        padding-top: 60px;
+    }
+</style>
 
 <body>
+
+    <div id="display"></div>
+    <div id="buttons"></div>
+    <button id="replay">replay</button>
     <script>
 
+        $(document).ready(function () {
 
+            // Here we are provided an initial array of letters.
+            // Use this array to dynamically create buttons on the screen.
+            var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+
+            // MAJOR TASK #1: DYNAMICALLY CREATE BUTTONS
+            // =================================================================================
+
+            // 1. Create a for-loop to iterate through the letters array.
+            for (var i = 0; i < letters.length; i++) {
+
+                // Inside the loop...
+
+                // 2. Create a variable named "letterBtn" equal to $("<button>");
+                var letterBtn = $("<button>");
+
+                // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
+                letterBtn.addClass("letter-button letter letter-button-color");
+
+                // 4. Then give each "letterBtn" a data-attribute called "data-letter".
+                letterBtn.attr("data-letter", letters[i]);
+
+                // 5. Then give each "letterBtns" a text equal to "letters[i]".
+                letterBtn.text(letters[i]);
+
+                // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
+                $("#buttons").append(letterBtn);
+
+            }
+        });
 
 
 
@@ -26,12 +85,6 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
 
 </body>
 
