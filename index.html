@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+        crossorigin="anonymous" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -15,59 +15,73 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/buttons.js"></script>
 </head>
 
 
 <body>
+    <hr />
 
     <div class="container ">
         <div class="jumbotron bg-info">
 
             <div class="container">
                 <h1 class="text-white"> Welcome to the Word Search Game!</h1>
+                <img src="assets/img/the_wiz.jpg" class="img-fluid" />
+                <h4>A "The Wiz" Themed Hangman Clone</h4>
                 <h2 class="text-white">How to play:</h2>
                 <h4 class="text-white">Either use the keyboard or click the buttons in order to guess the letter.
                     You will only have a certain amount of guesses before it's game over, so choose wisely!
+
                 </h4>
+                <p class="font-weight-bold">Please note hyphens will have to be used in place of spaces for multi-word
+                    answers. I can't figure out how to get it to recognize whitespace. Sry!</p>
 
             </div>
         </div>
+        <hr />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4" id="stats">
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/ecentrance.jpg" />
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item font-weight-bold text-left">Guesses Remaining:</li>
+                        <li class="list-group-item text-center" id="guesses"></li>
+                        <li class="list-group-item font-weight-bold text-left">Wrong Guesses:</li>
+                        <li class="list-group-item text-center" id="wrong-guesses"></li>
+                        <li class="list-group-item font-weight-bold text-left">Wins:</li>
+                        <li class="list-group-item text-center" id="wins"></li>
+                        <li class="list-group-item font-weight-bold text-left">Losses:</li>
+                        <li class="list-group-item text-center" id="losses"></li>
+
+
+
+
+
+                    </ul>
 
 
 
 
 
 
+                </div>
+
+
+            </div>
+            <div class="col-8 font-weight-bold card card-heading font-weight-bold" id="board">
+
+
+
+            </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
 
 
 
@@ -84,8 +98,7 @@
 
 
 
-
-
+    <hr />
 
 
 
@@ -98,7 +111,7 @@
 
         <div class="row">
             <div class="col col-1"></div>
-            <div id="buttons" class="col col-10"></div>
+            <div id="buttons" class=" jumbotron col col-10 bg-light "></div>
             <div class="col col-1"></div>
 
 
@@ -106,7 +119,7 @@
         </div>
         <div class="row">
             <div class="col col-9"></div>
-            <div class="col col-3"> <button id="replay" class="btn btn-danger btn-lg">Play Again</button>
+            <div class="col col-3"> <button id="replay" class="btn btn-danger btn-lg">Start/Play Again</button>
             </div>
         </div>
     </div>
@@ -115,7 +128,8 @@
 
 
 
-
+    <hr />
+    <script src="assets/js/wordsearch.js"></script>
 
 </body>
 

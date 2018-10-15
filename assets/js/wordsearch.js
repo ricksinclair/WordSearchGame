@@ -4,15 +4,15 @@
 ///////////////////////////////////////////////////
 
 //nummber of wins
-var numWins = 0;
+var wins = 0;
 //number of losses;
-var numLosses = 0;
+var losses = 0;
 //number of guesses;
-var numGuesses = 0;
+var guesses = 0;
 //words picked
 var wordPicked = "";
 //words broken down into characters
-var wordDissected = [];
+var letterArray = [];
 //word bank of incorrect guesses
 var wrongGuesses = [];
 //bank of available words to play with
@@ -20,13 +20,33 @@ var wordList = [
   "lion",
   "tigers",
   "bears",
-  "tinman",
-  "scarecrow",
+  "the-tin-man",
+  "the-scarecrow",
+  "the-cowardly-lion",
   "dorothy",
-  "munchkins",
-  "wizard"
+  "the-munchkins",
+  "the-wizard",
+  "the-wicked-witch"
 ];
+//makes array of current gamestate including the gameboard and correct guesses
+var currentGameState = [];
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////
+//Functions////////////////////////////////////////////
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+function startGame() {
+  guesses = 7;
+
+  wordPicked = wordList[Math.floor(Math.random() * wordList.length)];
+  console.log(wordPicked);
+  letterArray = wordPicked.split("");
+  console.log(letterArray);
+  gameBoardLength = letterArray.length;
+}
+
+startGame();
