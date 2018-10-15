@@ -8,3 +8,12 @@ body {
   display: inline-block;
   height: auto;
 }
+
+.button {
+  width: 15px;
+}
+
+#wizimg {
+  height: 50%;
+  width: 50%;
+}

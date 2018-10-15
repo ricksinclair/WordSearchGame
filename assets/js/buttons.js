@@ -63,9 +63,9 @@ $(document).ready(function() {
         letterBtn.addClass("btn btn-primary  btn-lg letter");
         buttonSpacer.addClass("divider");
         // 4. Then give each "letterBtn" a data-attribute called "data-letter".
-        letterBtn.attr("data-letter", letters[i]);
-        letterBtn.attr("id", letters[i]);
-        letterBtn.attr("value", letters[i]);
+        letterBtn.attr("data-letter", letters[i].toLowerCase());
+        letterBtn.attr("id", letters[i].toLowerCase());
+        letterBtn.attr("value", letters[i].toLowerCase());
 
         // 5. Then give each "letterBtns" a text equal to "letters[i]".
         letterBtn.text(letters[i]);

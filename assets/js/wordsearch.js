@@ -134,9 +134,10 @@ $("#replay").on("click", function() {
 });
 
 $(".letter").on("click", function() {
-  var buttonGuess = $(this).val().toString.toLowerCase;
+  var buttonGuess = toString($(this).val()).toLowerCase();
 
-  console.log("buttonGuess: " + buttonGuess);
   letterCheck(buttonGuess);
+  console.log("buttonGuess: " + buttonGuess);
+
   afterGuess();
 });
