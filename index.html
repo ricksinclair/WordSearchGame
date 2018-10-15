@@ -15,71 +15,100 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/buttons.js"></script>
 </head>
-<style>
-    .letter {
-        width: 30px;
-        height: 30px;
-        border-style: solid;
-        padding: 2px;
-        float: left;
-        margin: 2px;
-    }
 
-    .letter-button-color {
-        color: darkcyan;
-    }
-
-    #buttons {
-        padding-top: 60px;
-    }
-</style>
 
 <body>
 
+    <div class="container ">
+        <div class="jumbotron bg-info">
+
+            <div class="container">
+                <h1 class="text-white"> Welcome to the Word Search Game!</h1>
+                <h2 class="text-white">How to play:</h2>
+                <h4 class="text-white">Either use the keyboard or click the buttons in order to guess the letter.
+                    You will only have a certain amount of guesses before it's game over, so choose wisely!
+                </h4>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="display"></div>
-    <div id="buttons"></div>
-    <button id="replay">replay</button>
-    <script>
 
-        $(document).ready(function () {
-
-            // Here we are provided an initial array of letters.
-            // Use this array to dynamically create buttons on the screen.
-            var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
-
-            // MAJOR TASK #1: DYNAMICALLY CREATE BUTTONS
-            // =================================================================================
-
-            // 1. Create a for-loop to iterate through the letters array.
-            for (var i = 0; i < letters.length; i++) {
-
-                // Inside the loop...
-
-                // 2. Create a variable named "letterBtn" equal to $("<button>");
-                var letterBtn = $("<button>");
-
-                // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
-                letterBtn.addClass("letter-button letter letter-button-color");
-
-                // 4. Then give each "letterBtn" a data-attribute called "data-letter".
-                letterBtn.attr("data-letter", letters[i]);
-
-                // 5. Then give each "letterBtns" a text equal to "letters[i]".
-                letterBtn.text(letters[i]);
-
-                // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
-                $("#buttons").append(letterBtn);
-
-            }
-        });
+    <div class="container">
+        <div class="row">
+            <div class="col col-1"></div>
+            <div id="buttons" class="col col-10"></div>
+            <div class="col col-1"></div>
 
 
 
+        </div>
+        <div class="row">
+            <div class="col col-9"></div>
+            <div class="col col-3"> <button id="replay" class="btn btn-danger btn-lg">Play Again</button>
+            </div>
+        </div>
+    </div>
 
-
-    </script>
 
 
 
