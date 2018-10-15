@@ -27,8 +27,8 @@ $(document).ready(function() {
     "W",
     "X",
     "Y",
-    "Z",
-    "_"
+    "Z" //,
+    //"-"
   ];
 
   // DYNAMICALLY CREATE BUTTONS
@@ -43,9 +43,9 @@ $(document).ready(function() {
     //because the regex stuff  needed to detect white space is a little murky to me at this point.
 
     switch (i) {
-      case 27: //funny thing is...if I set this to 26 it will change the button, but it doens't do so for whitespace or for a hyphen.
-        letterBtn.text("Space");
-        break;
+      //   case 27: //funny thing is...if I set this to 26 it will change the button, but it doens't do so for whitespace or for a hyphen/underscore.
+      //     letterBtn.text("Space");
+      //     break;
 
       case 13:
         //allows for 2x 13-button rows
@@ -60,11 +60,12 @@ $(document).ready(function() {
         var hRule = $("<hr>");
 
         // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
-        letterBtn.addClass("btn btn-primary  btn-lg");
+        letterBtn.addClass("btn btn-primary  btn-lg letter");
         buttonSpacer.addClass("divider");
         // 4. Then give each "letterBtn" a data-attribute called "data-letter".
         letterBtn.attr("data-letter", letters[i]);
         letterBtn.attr("id", letters[i]);
+        letterBtn.attr("value", letters[i]);
 
         // 5. Then give each "letterBtns" a text equal to "letters[i]".
         letterBtn.text(letters[i]);

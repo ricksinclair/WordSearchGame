@@ -22,6 +22,48 @@
 
 <body>
     <hr />
+    <div class="modal" tabindex="-1" role="dialog" id="congratulatory_message">
+        <audio id="winAudio">
+            <source src="assets/mp3/we-are-the-champions-copia.mp3" type="audio/mp3" />
+        </audio>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Winner Winner Chicken Dinner!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>All letters guessed correctly! You Win!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="loser_message">
+        <audio id="lossAudio">
+            <source src="assets/mp3/The Price is Right Losing Horn - Gaming Sound Effect (HD).mp3" type="audio/mp3" />
+        </audio>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Unfortunately, "almost" doesn't count..</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Tough luck buddy. I'm sorry, but ya lost! Better luck next time.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container ">
         <div class="jumbotron bg-info">
@@ -72,32 +114,21 @@
 
 
             </div>
-            <div class="col-8 font-weight-bold card card-heading font-weight-bold" id="board">
+            <div class="col-8 font-weight-bold card card-heading font-weight-bold text-center">
 
 
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <h1 id="board"></h1>
+
+
+
+                </div>
 
             </div>
-
-
-
-
         </div>
 
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
+    </div>
     <hr />
 
 
