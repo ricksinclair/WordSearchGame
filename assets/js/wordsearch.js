@@ -137,8 +137,9 @@ $("#replay").on("click", function() {
 //are handled differently.
 $(document).on("click", ".letter", function() {
   var buttonGuess = $(this).val();
-  letterCheck(buttonGuess);
   console.log("buttonGuess: " + buttonGuess);
+
+  letterCheck(buttonGuess);
 
   afterGuess();
 });
