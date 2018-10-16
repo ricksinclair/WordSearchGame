@@ -50,7 +50,6 @@ $(document).ready(function() {
       case 13:
         //allows for 2x 13-button rows
         $("#buttons").append(hRule);
-        break;
 
       default:
         // 2. Create a variable named "letterBtn" equal to $("<button>");
