@@ -13,7 +13,9 @@ body {
   width: 15px;
 }
 
-#wizimg {
-  height: 50%;
-  width: 50%;
+@media screen and (min-width: 500px) {
+  #wizimg {
+    height: 75%;
+    width: 75%;
+  }
 }
