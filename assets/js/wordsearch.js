@@ -117,6 +117,9 @@ function afterGuess() {
     $("#loser_message").modal("show");
     var loserTunes = document.getElementById("lossAudio");
     loserTunes.play();
+    document.getElementById("solution").innerHTML =
+      "The Solution Was: " + wordPicked;
+
     document.getElementById("losses").innerHTML = losses;
   }
 }
