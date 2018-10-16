@@ -100,7 +100,7 @@ function afterGuess() {
   console.log("Wins: " + wins);
   console.log("Losses: " + losses);
   console.log("Guesses Remaining: " + guesses);
-  document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join("");
+  document.getElementById("wrong-guesses").innerHTML = wrongGuesses;
   document.getElementById("guesses").innerHTML = guesses;
   document.getElementById("board").innerHTML = currentGameState
     .join(" ")
