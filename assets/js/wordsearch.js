@@ -133,9 +133,10 @@ $("#replay").on("click", function() {
   startGame();
 });
 
-$(".letter").on("click", function() {
-  var buttonGuess = toString($(this).val()).toLowerCase();
-
+//Thank you to Darren for this Voodoo. Apparently dynamically generated divs
+//are handled differently.
+$(document).on("click", ".letter", function() {
+  var buttonGuess = $(this).val();
   letterCheck(buttonGuess);
   console.log("buttonGuess: " + buttonGuess);
 
