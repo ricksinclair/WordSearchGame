@@ -69,7 +69,7 @@ function startGame() {
   }
   //log the gameboard
   console.log(currentGameState);
-  document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join("");
+  document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
   document.getElementById("guesses").innerHTML = guesses;
   document.getElementById("board").innerHTML = currentGameState.join(" ");
 }
