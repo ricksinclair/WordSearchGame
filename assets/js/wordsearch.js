@@ -3,6 +3,10 @@
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 
+//boolean to control gamestate
+
+var gameOn = true;
+
 //nummber of wins
 var wins = 0;
 //number of losses;
@@ -72,6 +76,8 @@ function startGame() {
   document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
   document.getElementById("guesses").innerHTML = guesses;
   document.getElementById("board").innerHTML = currentGameState.join(" ");
+  gameOn = true;
+  console.log(gameOn);
 }
 
 function letterCheck(letterGuessed) {
@@ -97,34 +103,36 @@ function letterCheck(letterGuessed) {
 }
 
 function afterGuess() {
-  console.log("Wins: " + wins);
-  console.log("Losses: " + losses);
-  console.log("Guesses Remaining: " + guesses);
-  document.getElementById("wrong-guesses").innerHTML = wrongGuesses;
-  document.getElementById("guesses").innerHTML = guesses;
-  document.getElementById("board").innerHTML = currentGameState
-    .join(" ")
-    .toUpperCase();
+  if (gameOn) {
+    console.log("Wins: " + wins);
+    console.log("Losses: " + losses);
+    console.log("Guesses Remaining: " + guesses);
+    document.getElementById("wrong-guesses").innerHTML = wrongGuesses;
+    document.getElementById("guesses").innerHTML = guesses;
+    document.getElementById("board").innerHTML = currentGameState
+      .join(" ")
+      .toUpperCase();
 
-  if (letterArray.toString() === currentGameState.toString()) {
-    wins++;
-    $("#congratulatory_message").modal("show");
-    var championTunes = document.getElementById("winAudio");
-    championTunes.play();
-    document.getElementById("wins").innerHTML = wins;
-  } else if (guesses === 0) {
-    losses++;
-    $("#loser_message").modal("show");
-    var loserTunes = document.getElementById("lossAudio");
-    loserTunes.play();
-    document.getElementById("solution").innerHTML =
-      "The Solution Was: " + wordPicked;
+    if (letterArray.toString() === currentGameState.toString()) {
+      wins++;
+      $("#congratulatory_message").modal("show");
+      var championTunes = document.getElementById("winAudio");
+      championTunes.play();
+      document.getElementById("wins").innerHTML = wins;
+      gameOn = false;
+    } else if (guesses === 0) {
+      losses++;
+      $("#loser_message").modal("show");
+      var loserTunes = document.getElementById("lossAudio");
+      loserTunes.play();
+      document.getElementById("solution").innerHTML =
+        "The Solution Was: " + wordPicked;
 
-    document.getElementById("losses").innerHTML = losses;
+      document.getElementById("losses").innerHTML = losses;
+      gameOn = false;
+    }
   }
 }
-
-startGame();
 
 document.onkeyup = function(event) {
   var keyPicked = String.fromCharCode(event.which).toLowerCase();
@@ -146,3 +154,4 @@ $(document).on("click", ".letter", function() {
 
   afterGuess();
 });
+startGame();

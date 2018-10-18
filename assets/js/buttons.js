@@ -73,6 +73,7 @@ $(document).ready(function() {
         // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
         $("#buttons").append(letterBtn);
         $("#buttons").append(buttonSpacer);
+        letterBtn.toLowerCase;
     }
   }
 });

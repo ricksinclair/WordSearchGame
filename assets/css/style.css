@@ -6,7 +6,6 @@ body {
 .divider {
   width: 5px;
   display: inline-block;
-  height: auto;
 }
 
 .button {
